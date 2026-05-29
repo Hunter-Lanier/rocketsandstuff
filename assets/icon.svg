@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Rockets and Stuff icon">
+  <rect width="512" height="512" fill="#f4f1e8"/>
+  <rect x="36" y="36" width="440" height="440" fill="#e2dccd" stroke="#141414" stroke-width="24"/>
+  <path d="M112 354h288M112 286h288M112 218h288" stroke="#141414" stroke-width="28"/>
+  <path d="M204 138h104l-52-76z" fill="#814018"/>
+  <path d="M256 138v310" stroke="#814018" stroke-width="28"/>
+  <path d="M198 448h116" stroke="#141414" stroke-width="24"/>
+</svg>

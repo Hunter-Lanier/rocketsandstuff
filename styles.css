@@ -88,6 +88,9 @@ h1 {
 }
 
 .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -278,6 +281,18 @@ footer {
   .page {
     width: min(100% - 24px, 920px);
     padding-top: 18px;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 15vw, 4.4rem);
+  }
+
+  .site-nav {
+    gap: 6px 14px;
+  }
+
+  .site-nav a {
+    min-height: 38px;
   }
 
   .quote-panel {
