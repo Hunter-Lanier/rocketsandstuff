@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-label="Rockets & Stuff">
+  <rect width="760" height="360" fill="#f4f1e8"/>
+  <text x="4" y="156" fill="#141414" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="210" font-weight="900">R</text>
+  <text x="292" y="250" fill="#814018" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="168" font-weight="900">&amp;</text>
+  <text x="528" y="338" fill="#141414" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="210" font-weight="900">S</text>
+  <path d="M230 182h128M430 272h128" stroke="#141414" stroke-width="12"/>
+</svg>
