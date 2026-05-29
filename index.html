@@ -33,6 +33,7 @@
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
     <link rel="canonical" href="https://rocketsandstuff.com/">
     <link rel="stylesheet" href="styles.css">
+    <script src="/assets/request-form.js" defer></script>
   </head>
   <body>
     <main class="page">
@@ -100,6 +101,7 @@
         </p>
         <form id="request-form" class="request-form">
           <label for="item-request">What should Rockets & Stuff sell?</label>
+          <input id="company" class="form-trap" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
           <textarea id="item-request" name="item-request" rows="5" required maxlength="1200" placeholder="Example: injector plate coasters, test stand stickers, baby hats, shop notes..."></textarea>
           <button type="submit">Send the Request</button>
           <p id="request-status" class="form-status" role="status" aria-live="polite"></p>
@@ -110,45 +112,5 @@
         <p>Rockets & Stuff / Funding rocketry with stuff.</p>
       </footer>
     </main>
-    <script>
-      const requestForm = document.querySelector("#request-form");
-      const itemRequest = document.querySelector("#item-request");
-      const requestStatus = document.querySelector("#request-status");
-
-      requestForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const request = itemRequest.value.trim();
-
-        if (!request) {
-          requestStatus.textContent = "Type a request first.";
-          return;
-        }
-
-        requestStatus.textContent = "Sending...";
-        requestForm.querySelector("button").disabled = true;
-
-        try {
-          const response = await fetch("/api/request-item", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ request })
-          });
-
-          if (!response.ok) {
-            throw new Error("Request failed.");
-          }
-
-          itemRequest.value = "";
-          requestStatus.textContent = "Request sent. Thank you.";
-        } catch (error) {
-          requestStatus.textContent = "Request failed. You can still message @HunterLanier on X.";
-        } finally {
-          requestForm.querySelector("button").disabled = false;
-        }
-      });
-    </script>
   </body>
 </html>

@@ -211,6 +211,14 @@ h3 {
   margin-top: 16px;
 }
 
+.form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 label,
 button {
   font-family: Arial, Helvetica, sans-serif;
