@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Rockets & Stuff sells various products to fund amateur rocketry research."
+    >
+    <title>Rockets & Stuff</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <p class="pretitle">rocketsandstuff.com</p>
+        <h1>Rockets & Stuff</h1>
+        <p class="subtitle">A general store for funding amateur rocketry research.</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Site sections">
+        <a href="#mission">Mission</a>
+        <a href="#store">Store</a>
+        <a href="#request">Request an Item</a>
+        <a href="https://x.com/HunterLanier">X / @HunterLanier</a>
+      </nav>
+
+      <section class="quote-panel" aria-label="Site quote">
+        <blockquote>
+          <p>"Sometimes the funding mechanism of rockets has nothing to do with rockets."</p>
+          <cite>- Hunter Lanier, 2026</cite>
+        </blockquote>
+      </section>
+
+      <section class="copy" id="mission">
+        <p>
+          Everything you see for sale on this website is the child of amateur rocketry research. Our goal is to create products that you will enjoy, that also help increase manufacturing capacity across the board.
+        </p>
+        <p>
+          This makes more rockets, which makes more moon colonies.
+        </p>
+        <p>
+          Let me know what you think and follow me on X:
+          <a href="https://x.com/HunterLanier">@HunterLanier</a>.
+        </p>
+      </section>
+
+      <section class="section store-section" id="store">
+        <div class="section-heading">
+          <h2>Store</h2>
+          <p class="stamp">Under construction / no items listed yet</p>
+        </div>
+        <p>
+          The ecommerce section will live here. When items are ready, this area will hold product listings, prices, and checkout links.
+        </p>
+        <div class="empty-shelves" aria-label="Future store categories">
+          <article>
+            <h3>Rocket-adjacent hardware</h3>
+            <p>Not listed.</p>
+          </article>
+          <article>
+            <h3>Handmade goods</h3>
+            <p>Not listed.</p>
+          </article>
+          <article>
+            <h3>Prints, notes, and odd lots</h3>
+            <p>Not listed.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section request-section" id="request">
+        <h2>Request a Store Item</h2>
+        <p>
+          Want something specific on the store? Send a note and I will add it to the list.
+        </p>
+        <form id="request-form" class="request-form">
+          <label for="item-request">What should Rockets & Stuff sell?</label>
+          <textarea id="item-request" name="item-request" rows="5" required maxlength="1200" placeholder="Example: injector plate coasters, test stand stickers, baby hats, shop notes..."></textarea>
+          <button type="submit">Send the Request</button>
+          <p id="request-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <footer>
+        <p>Rockets & Stuff / Funding rocketry with stuff.</p>
+      </footer>
+    </main>
+    <script>
+      const requestForm = document.querySelector("#request-form");
+      const itemRequest = document.querySelector("#item-request");
+      const requestStatus = document.querySelector("#request-status");
+
+      requestForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const request = itemRequest.value.trim();
+
+        if (!request) {
+          requestStatus.textContent = "Type a request first.";
+          return;
+        }
+
+        requestStatus.textContent = "Sending...";
+        requestForm.querySelector("button").disabled = true;
+
+        try {
+          const response = await fetch("/api/request-item", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ request })
+          });
+
+          if (!response.ok) {
+            throw new Error("Request failed.");
+          }
+
+          itemRequest.value = "";
+          requestStatus.textContent = "Request sent. Thank you.";
+        } catch (error) {
+          requestStatus.textContent = "Request failed. You can still message @HunterLanier on X.";
+        } finally {
+          requestForm.querySelector("button").disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
