@@ -7,7 +7,7 @@
       name="description"
       content="Rockets & Stuff sells various products to fund amateur rocketry research."
     >
-    <meta name="theme-color" content="#f4f1e8">
+    <meta name="theme-color" content="#ffffff">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rocketsandstuff.com/">
     <meta property="og:title" content="Rockets & Stuff">
@@ -15,7 +15,7 @@
       property="og:description"
       content="A general store for funding amateur rocketry research."
     >
-    <meta property="og:image" content="https://rocketsandstuff.com/assets/share-card.png">
+    <meta property="og:image" content="https://rocketsandstuff.com/assets/logo-square.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1200">
@@ -27,88 +27,55 @@
       name="twitter:description"
       content="A general store for funding amateur rocketry research."
     >
-    <meta name="twitter:image" content="https://rocketsandstuff.com/assets/share-card.png">
+    <meta name="twitter:image" content="https://rocketsandstuff.com/assets/logo-square.png">
     <title>Rockets & Stuff</title>
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="icon" href="/assets/logo-square.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/logo-square.png">
     <link rel="canonical" href="https://rocketsandstuff.com/">
-    <link rel="stylesheet" href="styles.css">
-    <script src="/assets/request-form.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <main class="page">
       <header class="site-header">
-        <p class="pretitle">rocketsandstuff.com</p>
+        <p class="pretitle">ROCKETSANDSTUFF.COM</p>
         <h1>
-          <img class="site-logo" src="/assets/logo-mark.svg" alt="Rockets & Stuff">
+          <img class="site-logo" src="/assets/logo-horizontal.png" alt="Rockets & Stuff">
         </h1>
         <p class="subtitle">A general store for funding amateur rocketry research.</p>
       </header>
 
-      <nav class="site-nav" aria-label="Site sections">
-        <a href="#mission">Mission</a>
-        <a href="#store">Store</a>
-        <a href="#request">Request an Item</a>
-        <a href="https://x.com/HunterLanier">X / @HunterLanier</a>
+      <nav class="site-nav" aria-label="Site pages">
+        [ Home ]
+        [ <a href="/about.html">About Us</a> ]
+        [ <a href="/store.html">Store</a> ]
+        [ <a href="/request.html">Request Item</a> ]
+        [ <a href="/cart.html">Cart</a> ]
+        [ <a href="https://x.com/HunterLanier">X: @HunterLanier</a> ]
       </nav>
+
+      <hr>
 
       <section class="quote-panel" aria-label="Site quote">
         <blockquote>
-          <p>"Sometimes the funding mechanism of rockets has nothing to do with rockets."</p>
+          <p>"When life gives you materials and no tools, make consumer hardware that justifies the tools."</p>
           <cite>- Hunter Lanier, 2026</cite>
         </blockquote>
       </section>
 
-      <section class="copy" id="mission">
+      <section class="copy">
+        <h2>Welcome</h2>
         <p>
-          Everything you see for sale on this website is the child of amateur rocketry research. Our goal is to create products that you will enjoy, that also help increase manufacturing capacity across the board.
+          Rockets & Stuff is a general store built to fund amateur rocketry research.
         </p>
         <p>
-          This makes more rockets, which makes more moon colonies.
+          The idea is simple: make useful consumer goods with the same tools, materials, and manufacturing processes that will eventually help build rockets. The store is not open yet, but the machine is being assembled.
         </p>
         <p>
-          Let me know what you think and follow me on X:
-          <a href="https://x.com/HunterLanier">@HunterLanier</a>.
+          <a href="/about.html">Read more</a>.
         </p>
       </section>
 
-      <section class="section store-section" id="store">
-        <div class="section-heading">
-          <h2>Store</h2>
-          <p class="stamp">Under construction / no items listed yet</p>
-        </div>
-        <p>
-          The ecommerce section will live here. When items are ready, this area will hold product listings, prices, and checkout links.
-        </p>
-        <div class="empty-shelves" aria-label="Future store categories">
-          <article>
-            <h3>Rocket-adjacent hardware</h3>
-            <p>Not listed.</p>
-          </article>
-          <article>
-            <h3>Handmade goods</h3>
-            <p>Not listed.</p>
-          </article>
-          <article>
-            <h3>Prints, notes, and odd lots</h3>
-            <p>Not listed.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section request-section" id="request">
-        <h2>Request a Store Item</h2>
-        <p>
-          Want something specific on the store? Send a note and I will add it to the list.
-        </p>
-        <form id="request-form" class="request-form">
-          <label for="item-request">What should Rockets & Stuff sell?</label>
-          <input id="company" class="form-trap" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <textarea id="item-request" name="item-request" rows="5" required maxlength="1200" placeholder="Example: injector plate coasters, test stand stickers, baby hats, shop notes..."></textarea>
-          <button type="submit">Send the Request</button>
-          <p id="request-status" class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </section>
+      <hr>
 
       <footer>
         <p>Rockets & Stuff / Funding rocketry with stuff.</p>

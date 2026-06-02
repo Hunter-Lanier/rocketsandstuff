@@ -32,6 +32,9 @@
     }
   ],
   "functions": {
+    "api/create-checkout-session.js": {
+      "maxDuration": 5
+    },
     "api/request-item.js": {
       "maxDuration": 5
     }

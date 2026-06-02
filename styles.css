@@ -1,10 +1,9 @@
 :root {
-  --paper: #f4f1e8;
-  --ink: #141414;
-  --link: #814018;
-  --rule: #26221c;
-  --muted: #55514a;
-  --shade: #e2dccd;
+  --blue: #003399;
+  --red: #cc0000;
+  --ink: #000000;
+  --paper: #ffffff;
+  --pale-blue: #eef3ff;
 }
 
 * {
@@ -15,44 +14,39 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.55;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.45;
 }
 
 a {
-  color: var(--link);
-  font-weight: 700;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+a:visited {
+  color: #551a8b;
 }
 
 a:hover {
-  color: var(--ink);
+  color: var(--red);
 }
 
 .page {
-  width: min(920px, calc(100% - 32px));
+  width: min(930px, calc(100% - 16px));
   margin: 0 auto;
-  padding: 28px 0 48px;
+  padding: 10px 0 36px;
 }
 
 .site-header {
-  padding-bottom: 16px;
-  border-bottom: 4px double var(--rule);
-}
-
-.pretitle,
-.subtitle,
-.note,
-footer {
-  color: var(--muted);
+  padding: 10px 8px 12px;
+  text-align: center;
+  border: 3px double var(--blue);
 }
 
 .pretitle {
-  margin: 0 0 4px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.76rem;
-  letter-spacing: 0;
-  text-transform: uppercase;
+  margin: 0 0 6px;
+  font: bold 12px Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -63,46 +57,43 @@ blockquote {
 }
 
 h1 {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   line-height: 1;
 }
 
 .site-logo {
   display: block;
-  width: min(100%, 720px);
+  width: min(100%, 430px);
   height: auto;
+  margin: 0 auto;
 }
 
-.subtitle {
-  margin-bottom: 0;
-  font-size: 1.05rem;
+.subtitle,
+cite,
+footer,
+.form-status {
+  color: #333333;
 }
 
 .site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--rule);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.86rem;
-  text-transform: uppercase;
+  margin: 8px 0;
+  padding: 6px;
+  text-align: center;
+  font: bold 13px Arial, Helvetica, sans-serif;
+  background: var(--pale-blue);
+  border: 1px solid var(--blue);
 }
 
-.site-nav a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+hr {
+  height: 0;
+  border: 0;
+  border-top: 2px solid var(--red);
 }
 
 .quote-panel {
-  margin: 28px 0;
-  padding: 22px;
-  background: var(--shade);
-  border: 1px solid var(--rule);
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid var(--red);
 }
 
 blockquote {
@@ -110,107 +101,90 @@ blockquote {
 }
 
 blockquote p {
-  margin-bottom: 12px;
-  font-size: clamp(1.45rem, 4vw, 2.4rem);
-  line-height: 1.14;
+  margin-bottom: 8px;
+  color: var(--blue);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1.15;
 }
 
 cite {
   display: block;
-  color: var(--muted);
   font-style: normal;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
 }
 
 .copy {
   max-width: 760px;
-  margin-bottom: 34px;
-  font-size: 1.15rem;
+  margin: 0 auto 18px;
 }
 
-.copy p:last-child,
-.section p:last-child,
-footer p {
+.copy ol {
+  padding-left: 1.35rem;
+}
+
+.copy li {
+  margin-bottom: 14px;
+}
+
+.copy li h3 {
+  margin: 0 0 4px;
+  color: var(--blue);
+  font: bold 15px Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.copy li p {
   margin-bottom: 0;
 }
 
 .section {
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 2px solid var(--rule);
+  margin: 16px 0;
+  overflow-x: auto;
 }
 
-h2 {
-  margin-bottom: 8px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.15rem;
+h2,
+legend {
+  color: var(--red);
+  font: bold 18px Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-}
-
-h3 {
-  margin: 0 0 8px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.92rem;
-  text-transform: uppercase;
-}
-
-.note {
-  margin-bottom: 14px;
-  font-size: 0.95rem;
-}
-
-.section-heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 18px;
-  align-items: baseline;
 }
 
 .stamp {
-  margin-bottom: 8px;
-  color: var(--link);
+  color: var(--red);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
-.empty-shelves {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 16px;
-  border-top: 1px solid var(--rule);
-  border-left: 1px solid var(--rule);
+.store-table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
 }
 
-.empty-shelves article {
-  min-height: 132px;
+.store-table th,
+.store-table td {
+  padding: 7px 9px;
+  border: 1px solid var(--blue);
+  text-align: left;
+  vertical-align: top;
+}
+
+.store-table th {
+  color: #ffffff;
+  background: var(--blue);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+  margin: 0;
   padding: 12px;
-  background:
-    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(38, 34, 28, 0.06) 10px, rgba(38, 34, 28, 0.06) 12px),
-    rgba(255, 255, 255, 0.16);
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+  border: 2px groove var(--blue);
 }
 
-.empty-shelves p {
-  margin-bottom: 0;
-  color: var(--muted);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.84rem;
+.request-form label {
+  display: block;
+  margin-bottom: 6px;
+  font: bold 13px Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-}
-
-.request-section {
-  max-width: 760px;
-}
-
-.request-form {
-  display: grid;
-  gap: 10px;
-  margin-top: 16px;
 }
 
 .form-trap {
@@ -221,47 +195,60 @@ h3 {
   opacity: 0;
 }
 
-label,
-button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-label {
-  font-size: 0.82rem;
-}
-
 textarea {
   width: 100%;
-  min-height: 150px;
-  padding: 10px 12px;
+  min-height: 130px;
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid var(--rule);
+  background: #ffffff;
+  border: 2px inset #c8c8c8;
   border-radius: 0;
   font: inherit;
-  resize: vertical;
 }
 
 textarea:focus {
-  outline: 2px solid var(--link);
+  outline: 2px solid var(--red);
   outline-offset: 2px;
 }
 
 button {
-  width: fit-content;
-  padding: 9px 12px;
-  color: var(--paper);
-  background: var(--rule);
-  border: 1px solid var(--rule);
+  padding: 4px 10px;
+  color: #ffffff;
+  background: var(--blue);
+  border: 2px outset #c8c8c8;
   border-radius: 0;
+  font: bold 13px Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
 
+.button-link {
+  display: inline-block;
+  padding: 4px 10px;
+  color: #ffffff;
+  background: var(--blue);
+  border: 2px outset #c8c8c8;
+  font: bold 13px Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button-link:visited {
+  color: #ffffff;
+}
+
+.button-link:hover {
+  color: #ffffff;
+  background: var(--red);
+}
+
+.button-link-disabled,
+.button-link-disabled:hover {
+  color: #333333;
+  background: #dddddd;
+  cursor: not-allowed;
+}
+
 button:hover {
-  color: var(--ink);
-  background: var(--shade);
+  background: var(--red);
 }
 
 button:disabled {
@@ -270,16 +257,44 @@ button:disabled {
 }
 
 .form-status {
-  min-height: 1.55em;
+  min-height: 1.45em;
   margin-bottom: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
+}
+
+.product-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.product-thumb {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--blue);
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 180px;
+  border: 1px solid var(--blue);
+}
+
+.cart-note,
+.cart-return {
+  margin-left: 8px;
 }
 
 footer {
-  margin-top: 36px;
-  padding-top: 14px;
-  border-top: 4px double var(--rule);
+  text-align: center;
   font-size: 0.92rem;
 }
 
@@ -288,28 +303,29 @@ footer {
     font-size: 16px;
   }
 
-  .page {
-    width: min(100% - 24px, 920px);
-    padding-top: 18px;
+  .site-logo {
+    width: min(100%, 340px);
   }
 
   .site-nav {
-    gap: 6px 14px;
+    line-height: 1.9;
   }
 
-  .site-nav a {
-    min-height: 38px;
+  .store-table {
+    font-size: 14px;
   }
 
-  .quote-panel {
-    padding: 16px;
+  .store-table th,
+  .store-table td {
+    padding: 6px;
   }
 
-  .empty-shelves {
+  .product-thumb {
+    width: 34px;
+    height: 34px;
+  }
+
+  .product-detail-grid {
     grid-template-columns: 1fr;
-  }
-
-  button {
-    width: 100%;
   }
 }

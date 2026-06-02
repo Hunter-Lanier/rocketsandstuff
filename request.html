@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Request a future Rockets & Stuff store item."
+    >
+    <meta name="theme-color" content="#ffffff">
+    <title>Request Item / Rockets & Stuff</title>
+    <link rel="icon" href="/assets/logo-square.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/logo-square.png">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/assets/request-form.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <p class="pretitle">ROCKETSANDSTUFF.COM</p>
+        <h1>
+          <img class="site-logo" src="/assets/logo-horizontal.png" alt="Rockets & Stuff">
+        </h1>
+        <p class="subtitle">A general store for funding amateur rocketry research.</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Site pages">
+        [ <a href="/">Home</a> ]
+        [ <a href="/about.html">About Us</a> ]
+        [ <a href="/store.html">Store</a> ]
+        [ Request Item ]
+        [ <a href="/cart.html">Cart</a> ]
+        [ <a href="https://x.com/HunterLanier">X: @HunterLanier</a> ]
+      </nav>
+
+      <hr>
+
+      <section class="section request-section">
+        <form id="request-form" class="request-form">
+          <fieldset>
+            <legend>Request a Store Item</legend>
+            <p>
+              Want something specific on the store? Send a note and I will add it to the list.
+            </p>
+            <label for="item-request">What should Rockets & Stuff sell?</label>
+            <input id="company" class="form-trap" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <textarea id="item-request" name="item-request" rows="5" required maxlength="1200" placeholder="Example: injector plate coasters, test stand stickers, baby hats, shop notes..."></textarea>
+            <p><button type="submit">Send the Request</button></p>
+            <p id="request-status" class="form-status" role="status" aria-live="polite"></p>
+          </fieldset>
+        </form>
+      </section>
+
+      <hr>
+
+      <footer>
+        <p>Rockets & Stuff / Funding rocketry with stuff.</p>
+      </footer>
+    </main>
+  </body>
+</html>

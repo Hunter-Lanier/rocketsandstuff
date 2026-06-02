@@ -3,7 +3,7 @@ const itemRequest = document.querySelector("#item-request");
 const requestStatus = document.querySelector("#request-status");
 const formLoadedAt = Date.now();
 
-requestForm.addEventListener("submit", async (event) => {
+requestForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const request = itemRequest.value.trim();
